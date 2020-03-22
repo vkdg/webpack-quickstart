@@ -3,18 +3,17 @@ Simple Webpack Build Template
 
 ### Installation 
 ``` bash
-git clone https://github.com/vkdg/webpack-simple webpack-simple
-cd webpack-simple
+git clone https://github.com/vkdg/webpack-quickstart.git ./
 npm install
 ```
 
 ### Run DevServer
-```
+``` bash
 npm run dev
 ```
 
 ### Build Production Version
-```
+``` bash
 npm run build
 ```
 
@@ -31,6 +30,7 @@ npm run build
 | - webpack.base.conf.js (main webpack config)
 | - webpack.build.conf.js
 | - webpack.dev.conf.js
+| - postcss.config.js
 | dist 
 | - assets
 | - - css
@@ -60,10 +60,9 @@ npm run build
 | - - - svg
 | - - js
 | - - _ index.js
-| - index.js (Entrypoint)
+| - app.js (Entrypoint)
 | index.htm
 | package.json
-| postcss.config.js
 ```
 
 ### Base repo
