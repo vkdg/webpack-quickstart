@@ -1,6 +1,6 @@
 {
-  "name": "webpack-simple",
-  "version": "0.0.3",
+  "name": "webpack-quickstart",
+  "version": "0.0.4",
   "description": "Simple Webpack Build Template",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vkdg/webpack-simple.git"
+    "url": "git+https://github.com/vkdg/webpack-quickstart.git"
   },
   "keywords": [
     "javascript",
