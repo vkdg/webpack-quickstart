@@ -58,7 +58,7 @@ npm run build
 | index.htm
 | README.md
 | LICENSE
-| .editorcofig
+| .editorconfig
 | .gitignore
 ```
 
