@@ -3,10 +3,7 @@ const path = require('path')
 const fs = require('fs')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-// Main const
-// see more: https://github.com/vedees/webpack-template/blob/master/README.md#main-const
 const PATHS = {
   src: path.join(__dirname, '../src'),
   dist: path.join(__dirname, '../dist'),
@@ -14,8 +11,6 @@ const PATHS = {
   assets: 'assets/'
 }
 
-// Pages const for HtmlWebpackPlugin
-// see more: https://github.com/vedees/webpack-template/blob/master/README.md#html-dir-folder
 const PAGES_DIR = PATHS.src
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.html'))
 
@@ -25,7 +20,7 @@ module.exports = {
     paths: PATHS
   },
   entry: {
-    app: `${PATHS.src}/app.js`,
+    app: [`${PATHS.src}/assets/scss/main.scss`, `${PATHS.src}/assets/js/main.js`],
   },
   output: {
     filename: `${PATHS.assets}js/[name].min.js`,
@@ -65,16 +60,19 @@ module.exports = {
       test: /\.scss$/,
       use: [
         'style-loader',
-        MiniCssExtractPlugin.loader,
+        {
+          loader: MiniCssExtractPlugin.loader,
+          options: { esModule: false }
+        },
         {
           loader: 'css-loader',
           options: { sourceMap: true, url: false }
         }, {
           loader: 'postcss-loader',
-          options: { sourceMap: true, config: { path: `./build/postcss.config.js` } }
+          options: { sourceMap: true, postcssOptions: { config: path.resolve(__dirname, "./postcss.config.js") } }
         }, {
           loader: 'sass-loader',
-          options: { sourceMap: true, url: false }
+          options: { sourceMap: true }
         }
       ]
     }, {
@@ -83,11 +81,15 @@ module.exports = {
         'style-loader',
         MiniCssExtractPlugin.loader,
         {
+          loader: MiniCssExtractPlugin.loader,
+          options: { esModule: false }
+        },
+        {
           loader: 'css-loader',
           options: { sourceMap: true, url: false }
         }, {
           loader: 'postcss-loader',
-          options: { sourceMap: true, config: { path: `./build/postcss.config.js` } }
+          options: { sourceMap: true, postcssOptions: { config: path.resolve(__dirname, "./postcss.config.js") } }
         }
       ]
     }]
@@ -106,10 +108,13 @@ module.exports = {
       jQuery: 'jquery',
       'window.jQuery': 'jquery'
     }),
-    new CopyWebpackPlugin([
-      { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
-      { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
-      { from: `${PATHS.src}/static`, to: '' },
-    ]),
+    new CopyWebpackPlugin(
+      {
+        patterns: [
+          { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
+          { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
+        ]
+      }
+    ),
   ],
 }

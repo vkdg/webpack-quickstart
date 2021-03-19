@@ -31,38 +31,31 @@ npm run build
 | - webpack.build.conf.js
 | - webpack.dev.conf.js
 | - postcss.config.js
-| dist 
+| dist
 | - assets
 | - - css
 | - - - app.min.css
+| - - - app.min.css.map
+| - - fonts
+| - - img
 | - - js
 | - - - app.min.js
-| - - - vendor.min.js
-| - - img
+| - - - app.min.js.map
+| - - - vendors.min.js
+| - - - vendors.min.js.map
+| node_modules
+| src
+| - assets
+| - - css
 | - - fonts
-| - src
-| - - assets
-| - - - css
-| - - - - main.css
-| - - - fonts
-| - - - scss
-| - - - - modules
-| - - - - - header.scss
-| - - - - - footer.scss
-| - - - - utils
-| - - - - - fonts.scss
-| - - - - - libs.scss
-| - - - - - mixins.scss
-| - - - - - reset.scss
-| - - - - - vars.scss
-| - - - - main.scss (Main scss file)
-| - - - img
-| - - - svg
+| - - img
 | - - js
-| - - _ index.js
-| - app.js (Entrypoint)
-| index.htm
+| - - - main.js (Entrypoint app javascript)
+| - - scss
+| - - - main.scss (Entrypoint app styles)
 | package.json
+| package-lock.json
+| index.htm
 ```
 
 ### Base repo
