@@ -25,7 +25,8 @@ module.exports = {
     paths: PATHS
   },
   entry: {
-    app: `${PATHS.src}/app.js`,
+    // app: `${PATHS.src}/app.js`,
+    app: [`${PATHS.src}/assets/scss/main.scss`, `${PATHS.src}/js/index.js`],
   },
   output: {
     filename: `${PATHS.assets}js/[name].min.js`,
@@ -65,16 +66,19 @@ module.exports = {
       test: /\.scss$/,
       use: [
         'style-loader',
-        MiniCssExtractPlugin.loader,
+        {
+          loader: MiniCssExtractPlugin.loader,
+          options: { esModule: false }
+        },
         {
           loader: 'css-loader',
           options: { sourceMap: true, url: false }
         }, {
           loader: 'postcss-loader',
-          options: { sourceMap: true, config: { path: `./build/postcss.config.js` } }
+          options: { sourceMap: true, postcssOptions: { config: path.resolve(__dirname, "./postcss.config.js") } }
         }, {
           loader: 'sass-loader',
-          options: { sourceMap: true, url: false }
+          options: { sourceMap: true }
         }
       ]
     }, {
@@ -83,11 +87,15 @@ module.exports = {
         'style-loader',
         MiniCssExtractPlugin.loader,
         {
+          loader: MiniCssExtractPlugin.loader,
+          options: { esModule: false }
+        },
+        {
           loader: 'css-loader',
           options: { sourceMap: true, url: false }
         }, {
           loader: 'postcss-loader',
-          options: { sourceMap: true, config: { path: `./build/postcss.config.js` } }
+          options: { sourceMap: true, postcssOptions: { config: path.resolve(__dirname, "./postcss.config.js") } }
         }
       ]
     }]
@@ -106,10 +114,14 @@ module.exports = {
       jQuery: 'jquery',
       'window.jQuery': 'jquery'
     }),
-    new CopyWebpackPlugin([
-      { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
-      { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
-      { from: `${PATHS.src}/static`, to: '' },
-    ]),
+    new CopyWebpackPlugin(
+      {
+        patterns: [
+          { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
+          { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
+          // { from: `${PATHS.src}/static`, to: '' },
+        ]
+      }
+    ),
   ],
 }

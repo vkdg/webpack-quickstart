@@ -1,7 +1,7 @@
 {
   "name": "webpack-quickstart",
-  "version": "0.0.4",
-  "description": "Simple Webpack Build Template",
+  "version": "0.0.5",
+  "description": "Simple webpack build template",
   "main": "index.js",
   "scripts": {
     "build": "webpack --progress --config ./build/webpack.build.conf.js",
@@ -9,10 +9,6 @@
     "watch": "webpack -w --progress --config ./build/webpack.watch.conf.js",
     "w": "npm run watch"
   },
-  "browserslist": [
-    "> 1%",
-    "last 3 version"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vkdg/webpack-quickstart.git"
@@ -25,29 +21,28 @@
   ],
   "author": "Denis Hardenberg (https://github.com/vkdg)",
   "license": "MIT",
-  "devDependencies": {
-    "@babel/core": "^7.9.6",
-    "@babel/preset-env": "^7.9.6",
-    "autoprefixer": "^9.7.6",
-    "babel-loader": "^8.1.0",
-    "copy-webpack-plugin": "^5.1.1",
-    "css-loader": "^3.5.3",
-    "cssnano": "^4.1.10",
-    "file-loader": "^4.3.0",
-    "html-webpack-plugin": "^3.2.0",
-    "mini-css-extract-plugin": "^0.5.0",
-    "node-sass": "^4.14.0",
-    "postcss-loader": "^3.0.0",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3",
-    "webpack-merge": "^4.2.1"
+  "bugs": {
+    "url": "https://github.com/vkdg/webpack-quickstart/issues"
   },
-  "dependencies": {
-    "acorn": "^7.1.1",
-    "jquery": "^3.5.0",
-    "serialize-javascript": "^2.1.2"
+  "homepage": "https://github.com/vkdg/webpack-quickstart#readme",
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "autoprefixer": "^10.2.5",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^8.0.0",
+    "css-loader": "^5.1.3",
+    "cssnano": "^4.1.10",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.1",
+    "mini-css-extract-plugin": "^1.3.9",
+    "node-sass": "^5.0.0",
+    "postcss-loader": "^5.2.0",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.26.3",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.7.3"
   }
 }
