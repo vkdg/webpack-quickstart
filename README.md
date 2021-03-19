@@ -56,6 +56,10 @@ npm run build
 | package.json
 | package-lock.json
 | index.htm
+| README.md
+| LICENSE
+| .editorcofig
+| .gitignore
 ```
 
 ### Base repo
