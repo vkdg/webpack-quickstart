@@ -4,15 +4,15 @@ const baseWebpackConfig = require('./webpack.base.conf')
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   // DEV config
-  mode: 'development',
-  devtool: 'source-map',
-  plugins: [
-    new webpack.SourceMapDevToolPlugin({
-      filename: '[file].map'
-    })
-  ]
+  	mode: 'development',
+  	devtool: 'source-map',
+  	plugins: [
+    	new webpack.SourceMapDevToolPlugin({
+      		filename: '[file].map'
+    	})
+  	]
 })
 
 module.exports = new Promise((resolve, reject) => {
-  resolve(devWebpackConfig)
+  	resolve(devWebpackConfig)
 })
