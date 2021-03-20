@@ -25,7 +25,7 @@ npm run build (or b)
 * SASS Support via [sass-loader](https://github.com/jtangelder/sass-loader)
 * Autoprefixer via [postcss-loader](https://github.com/postcss/postcss-loader)
 * Babel via [babel](https://github.com/babel/babel)
-* ESLint [ESLint](https://github.com/eslint/eslint) / [Airbnb ESLint Base Config](https://github.com/airbnb/javascript)
+* [ESLint](https://github.com/eslint/eslint) / [Airbnb ESLint Base Config](https://github.com/airbnb/javascript)
 * Disable `url` in `css-loader`
 
 
