@@ -1,20 +1,24 @@
 # Webpack Simple
 Simple Webpack Build Template
 
+### Requirements
+* npm v6.14.11+
+* node v14.15.5+
+
 ### Installation 
 ``` bash
 git clone https://github.com/vkdg/webpack-quickstart.git ./
 npm install
 ```
 
-### Run DevServer
+### Run Watcher
 ``` bash
-npm run dev
+npm run watch (or w)
 ```
 
 ### Build Production Version
 ``` bash
-npm run build
+npm run build (or b)
 ```
 
 ### Features
