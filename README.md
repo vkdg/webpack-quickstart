@@ -68,5 +68,5 @@ npm run build (or b)
 | .eslintrc.js
 ```
 
-### Base repo
+### Special Thanks
 [vedees](https://github.com/vedees/webpack-template)
