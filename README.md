@@ -1,5 +1,9 @@
-# Webpack Simple
-Simple Webpack Build Template
+# Webpack Simple (Quickstart)
+This repository provides a simple template for developing a frontend using a webpack. This repository is intended primarily for projects with an independent frontend (when the builder is exclusively engaged in assembling javascript and css for further use in the project). Using the code from this repository, you can quickly deploy an assembly of a project based on the simplest and most basic views.
+
+All this is, first of all, relevant to me, so you can use this repository as you like, creating a fork from it, or simply using it in your projects with your own settings. I welcome pull requests to help make this template better.
+
+Enjoy!
 
 ### Requirements
 * npm v6.14.11+
