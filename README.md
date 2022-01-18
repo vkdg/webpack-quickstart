@@ -6,8 +6,8 @@ All this is, first of all, relevant to me, so you can use this repository as you
 Enjoy!
 
 ### Requirements
-* npm v6.14.11+
-* node v14.15.5+
+* npm v8.3.0+
+* node v17.3.0+
 
 ### Installation 
 ``` bash
